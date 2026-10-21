@@ -13,7 +13,7 @@ const CONFIG = {
   assetName: 'XUYU-Setup.exe',
   // ④ 页面上显示的版本信息（留空则自动从 GitHub 读最新 Release）
   version: 'v1.0.0',
-  size: '约 80 MB',
+  size: '约 83 MB',
   // ⑤ 打开后向 GitHub API 读取最新版本号 / 文件大小（未认证限 60 次/小时，
   //    只影响显示，不影响下载按钮；读不到就退回上面写的 version / size）
   liveReleaseInfo: true
