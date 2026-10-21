@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>序屿 · 本地离线日程管理</title>
+<meta name="description" content="序屿（XUYU）是一款完全离线运行的 Windows 桌面应用：日程规划、无限画布、简历与作品集、AI 对话。数据只存本机。">
+<meta name="theme-color" content="#06060a">
+<link rel="icon" href="assets/img/icon-128.png">
+<link rel="apple-touch-icon" href="assets/img/icon-256.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="序屿 · 本地 · 离线 · 井然有序">
+<meta property="og:description" content="完全离线运行的 Windows 桌面日程管理应用。数据只存本机，不登录、不上传。">
+<meta property="og:image" content="assets/img/og-cover.jpg">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<!-- ============ 导航 ============ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top" aria-label="序屿 首页">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="4" y="27" width="32" height="9" rx="3.6" fill="#2ee6c5"/>
+        <rect x="9" y="16.4" width="22" height="9" rx="3.2" fill="#1fc7b0"/>
+        <rect x="14.5" y="5.8" width="11" height="9" rx="3" fill="#a78bfa"/>
+      </svg>
+      <span>序屿</span>
+    </a>
+    <nav class="nav-links" aria-label="页面导航">
+      <a href="#showcase">外观</a>
+      <a href="#features">功能</a>
+      <a href="#download">下载</a>
+    </nav>
+    <a class="nav-cta" href="#download">立即下载</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ 首屏：视频 + 字标 ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-media" id="heroMedia">
+      <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="metadata"
+             poster="assets/img/hero-poster.jpg" aria-hidden="true">
+        <source src="assets/video/hero.mp4" type="video/mp4">
+      </video>
+      <img class="hero-still" src="assets/img/hero.webp" alt="" aria-hidden="true">
+    </div>
+    <div class="hero-veil" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">XUYU · 本地离线日程管理</p>
+      <h1 class="hero-title">序屿</h1>
+      <p class="hero-sub">本地 · 离线 · 井然有序</p>
+      <p class="hero-desc">日程、规划、简历、作品集，全部留在你自己的电脑里。</p>
+    </div>
+
+    <a class="scroll-cue" href="#download" aria-label="向下滚动到下载">
+      <span class="scroll-line"></span>
+      <span class="scroll-text">向下滚动</span>
+    </a>
+  </section>
+
+  <!-- ============ 下载 ============ -->
+  <section class="download" id="download">
+    <div class="glow glow-purple" aria-hidden="true"></div>
+    <div class="glow glow-cyan" aria-hidden="true"></div>
+
+    <div class="download-inner reveal">
+      <div class="app-icon" aria-hidden="true">
+        <img src="assets/img/icon-256.png" alt="序屿应用图标" width="128" height="128">
+      </div>
+
+      <h2 class="download-title">下载序屿</h2>
+      <p class="download-sub">一个安装包，装完就能离线用。不需要注册账号，不会上传任何数据。</p>
+
+      <div class="download-actions">
+        <a class="btn btn-primary" id="downloadBtn"
+           href="https://github.com/XUYU/XUYU/releases/latest"
+           data-magnetic>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v11m0 0 4.5-4.5M12 14 7.5 9.5M4.5 16.5v2A1.5 1.5 0 0 0 6 20h12a1.5 1.5 0 0 0 1.5-1.5v-2"
+                  fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span id="downloadLabel">下载 PC 版</span>
+        </a>
+        <a class="btn btn-ghost" id="releasesBtn" href="https://github.com/XUYU/XUYU/releases" data-magnetic>
+          查看全部版本
+        </a>
+      </div>
+
+      <p class="download-meta">
+        <span id="metaVersion">v1.0.0</span>
+        <i aria-hidden="true">·</i>
+        <span id="metaSize">约 80 MB</span>
+        <i aria-hidden="true">·</i>
+        <span>Windows 10 / 11（64 位）</span>
+      </p>
+
+      <p class="download-note">
+        安装包暂未做代码签名。首次运行如出现「Windows 已保护你的电脑」，点<b>更多信息</b> → <b>仍要运行</b>即可。
+      </p>
+    </div>
+
+    <div class="req reveal" aria-label="系统要求">
+      <div><dt>系统</dt><dd>Windows 10 / 11 · 64 位</dd></div>
+      <div><dt>磁盘</dt><dd>安装约 300 MB</dd></div>
+      <div><dt>网络</dt><dd>安装后全程离线</dd></div>
+      <div><dt>数据</dt><dd>仅存本机 AppData</dd></div>
+    </div>
+  </section>
+
+  <!-- ============ 展示一：品牌岛屿（全幅） ============ -->
+  <section class="band-wrap" id="showcase">
+    <div class="band">
+      <div class="band-media">
+        <img src="assets/img/showcase-island.webp" alt="序屿品牌主视觉：夜色海面上一座小岛，岛上三块发光方块自下而上收窄" loading="lazy">
+      </div>
+    </div>
+    <div class="band-caption reveal">
+      <span class="band-index">01</span>
+      <p><b>序</b>三块台阶自下而上收窄，像把日子一层层码好。</p>
+    </div>
+  </section>
+
+  <!-- ============ 展示二：双主题（左右分栏） ============ -->
+  <section class="split" id="appearance">
+    <div class="split-inner">
+      <div class="split-copy reveal">
+        <p class="eyebrow"><span class="eyebrow-line"></span>02 — 外观</p>
+        <h2 class="split-title">昼与夜，<br>都留白。</h2>
+        <p class="split-text">
+          白天是极简的玻璃与留白，夜晚转为深墨低光。一键切换，它记得你上次的选择。
+          背景可以换成任意一张图——整个窗口会化成水滴玻璃，连侧边菜单一起。
+        </p>
+        <ul class="split-list">
+          <li>白天 / 黑夜双主题，跟随设置长期记忆</li>
+          <li>全窗口自定义背景，图片只存本地</li>
+          <li>玻璃透明度、模糊强度、动效时长可调</li>
+        </ul>
+      </div>
+
+      <div class="split-art reveal" data-tilt>
+        <div class="art-frame">
+          <img src="assets/img/showcase-themes.webp" alt="序屿在白天与黑夜两种主题下的界面效果" loading="lazy">
+          <span class="art-sheen" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 展示三：日程画布（滚动钉住） ============ -->
+  <section class="pin-wrap" id="canvas">
+    <div class="pin">
+      <div class="pin-media" id="pinMedia">
+        <img src="assets/img/showcase-desk.webp" alt="桌面显示器上的序屿日程规划画布界面" loading="lazy">
+      </div>
+      <div class="pin-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span>03 — 日程规划</p>
+        <h2 class="pin-title">一块没有边界的画布</h2>
+        <p class="pin-text">
+          滚轮缩放到 300%，空白处拖动漫游，左下角小地图俯瞰全局。
+          把整套日程框架拖进来，再把事项卡片嵌进某个时段——子卡会自动长高，把下面的格子让开。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 功能 ============ -->
+  <section class="features" id="features">
+    <div class="features-head reveal">
+      <p class="eyebrow"><span class="eyebrow-line"></span>04 — 全部功能</p>
+      <h2 class="features-title">一台电脑，一个 App，就够了。</h2>
+    </div>
+
+    <div class="feature-grid">
+      <article class="feature reveal" data-spot>
+        <div class="feature-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="4" width="16" height="16" rx="4"/><path d="M4 10h16M9 10v10"/>
+          </svg>
+        </div>
+        <h3>离线优先</h3>
+        <p>没有登录、没有云同步、没有后台请求。断网、飞行模式、不开 Wi-Fi，都照常用。</p>
+      </article>
+
+      <article class="feature reveal" data-spot>
+        <div class="feature-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 4h11l3 3v13H5z"/><path d="M8.5 12.5l2 2 4-4.5"/>
+          </svg>
+        </div>
+        <h3>即改即存</h3>
+        <p>每一次拖拽、每一行文字改动都立刻写进本地文件。关掉软件、重启电脑，都不会丢。</p>
+      </article>
+
+      <article class="feature reveal" data-spot>
+        <div class="feature-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16v10H9l-5 4z"/><path d="M8 10h8M8 13h5"/>
+          </svg>
+        </div>
+        <h3>AI 对话</h3>
+        <p>DeepSeek、通义千问、智谱 GLM、Kimi、豆包任选，用自己的 Key，只在对话时联网。</p>
+      </article>
+
+      <article class="feature reveal" data-spot>
+        <div class="feature-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="3.5" width="16" height="17" rx="3"/><path d="M8 8h8M8 12h8M8 16h5"/>
+          </svg>
+        </div>
+        <h3>简历与作品集</h3>
+        <p>多套模板即时切换，内容分块编辑，版式随文字自动撑开——不会溢出，随时改。</p>
+      </article>
+
+      <article class="feature reveal" data-spot>
+        <div class="feature-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.3 2.5 14.2 0 17M12 3.5c-2.5 2.3-2.5 14.2 0 17"/>
+          </svg>
+        </div>
+        <h3>作品网站</h3>
+        <p>勾选作品，一键生成单文件 HTML 个人网站。双击即可打开，也可以发布到公网。</p>
+      </article>
+
+      <article class="feature reveal" data-spot>
+        <div class="feature-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19V9l8-5 8 5v10"/><path d="M4 19h16M10 19v-5h4v5"/>
+          </svg>
+        </div>
+        <h3>小镇大厅</h3>
+        <p>关掉表格和清单，在日式街角走两圈。天气、时间、五个可换的角色，都是本地的。</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 结尾 CTA ============ -->
+  <section class="final reveal">
+    <h2 class="final-title">把日子码好。</h2>
+    <p class="final-text">序屿不需要账号，也不问你联网。装好，就是你的。</p>
+    <a class="btn btn-primary" href="#download" data-magnetic>下载 PC 版</a>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="4" y="27" width="32" height="9" rx="3.6" fill="#2ee6c5"/>
+        <rect x="9" y="16.4" width="22" height="9" rx="3.2" fill="#1fc7b0"/>
+        <rect x="14.5" y="5.8" width="11" height="9" rx="3" fill="#a78bfa"/>
+      </svg>
+      <div>
+        <strong>序屿</strong>
+        <span>XUYU · 本地离线日程管理</span>
+      </div>
+    </div>
+    <nav class="foot-links" aria-label="页脚导航">
+      <a href="#download">下载</a>
+      <a href="#features">功能</a>
+      <a id="footRepo" href="https://github.com/XUYU/XUYU">GitHub 仓库</a>
+      <a id="footReleases" href="https://github.com/XUYU/XUYU/releases">发布记录</a>
+    </nav>
+    <p class="foot-copy">© 2026 序屿 XUYU · 数据归你，仅存本机</p>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>
